@@ -3,6 +3,7 @@
 #include <list>
 #include <numeric>
 #include <string>
+#include <conio.h>
 #include "Product.h"
 
 using namespace std; class UserInterface
@@ -10,7 +11,6 @@ using namespace std; class UserInterface
 private:
 	ProductList* ptrProductList;
 	ProductAddScreen* ptrProductAddScreen;
-	char ch;
 public:
 	UserInterface();
 	~UserInterface();

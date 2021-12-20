@@ -79,7 +79,7 @@ void ProductList::insertProduct(Product* ptrP)
 
 void ProductList::display() 
 {
-	cout << "\nНазвание Цена Количество\n-------------------\n";
+	cout << "\nНазвание\t Цена\t\t Количество\n-------------------------------------\n";
 	if (setPtrsProduct.empty()) 
 		cout << "***Нет товаров***\n" << endl; 
 	else
@@ -87,7 +87,7 @@ void ProductList::display()
 		iter = setPtrsProduct.begin();
 		while (iter != setPtrsProduct.end()) 
 		{
-			cout << " || " << (*iter)->getname() << " || " << (*iter)->getprice() <<  " || "<< (*iter)->getcount() << " || " << endl;
+			cout << " ||\t " << (*iter)->getname() << " ||\t " << (*iter)->getprice() <<  " ||\t "<< (*iter)->getcount() << " || " << endl;
 			*iter++;
 		}
 	}

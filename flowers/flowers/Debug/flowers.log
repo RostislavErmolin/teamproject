@@ -1,5 +1,6 @@
 ﻿  Product.cpp
 C:\teamproject\flowers\flowers\Product.cpp(91,4): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
   UserInterface.cpp
+  flowers.cpp
   Создание кода...
   flowers.vcxproj -> C:\teamproject\flowers\Debug\flowers.exe

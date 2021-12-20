@@ -1,8 +1,7 @@
 #include <iostream>
-#include <conio.h>
 #include "UserInterface.h"
+#define esc 27
 
-//using namespace std;
 UserInterface::UserInterface()
 {
 	ptrProductList = new ProductList;
@@ -17,6 +16,8 @@ void UserInterface::interact()
 {
 	bool c = true;
 	while (c == true) {
+		system("cls");
+		c = false;
 		cout << "1-Добавить новый товар" << endl;
 		cout << "2-Список товаров" << endl;
 		switch (_getch())
@@ -28,13 +29,25 @@ void UserInterface::interact()
 			ptrProductAddScreen = new ProductAddScreen(ptrProductList);
 			ptrProductAddScreen->setProduct();
 			delete ptrProductAddScreen;
+			c = true;
 			break;
 
 		case '2': 
 			system("cls");
 			ptrProductList->display();
+			system("pause");
+			cout << "Выберете товар:" << endl;
+			c = true;
 			break;
-			system("cls");
+			
+
+		case esc:
+			break;
+			
+		default: cout << "Неправильный ввод!"<<endl;
+			system("pause");
+			c = true;
+			break;
 		} 
 	}
 }

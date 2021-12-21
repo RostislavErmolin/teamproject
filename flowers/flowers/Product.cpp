@@ -15,7 +15,7 @@ char getaChar()
 	return ch;
 }
 
-Product::Product(string n, string d, float p, int c, float o) : name(n), description(d), price(p), count(c), OptPrice(o)
+Product::Product( string n,  string d, float p, int i, int c, float o) : name(n),  description(d), price(p), id(i), count(c), OptPrice(o)
 {
 	
 }
@@ -23,6 +23,7 @@ Product::~Product()
 {
 	
 }
+
 string Product::getname()
 {
 	return name;
@@ -37,15 +38,86 @@ float Product::getprice()
 }
 float Product::getOptPrice()
 {
-	return price;
+	return OptPrice;
 }
 int Product::getcount()
 {
 	return count;
 }
+int Product::getid()
+{
+	return id;
+}
+int ProductList::getiid()
+{
+	int iid = 0;
+	if (setPtrsProduct.empty())
+		iid = 0;
+	else
+		iid = setPtrsProduct.size() ;
+	return iid;
+}
+int ProductList::getidd(int id) 
+{
+	ck = false;
+	string nam;
+	iter = setPtrsProduct.begin();
+	while (iter != setPtrsProduct.end())
+	{ 
+		if (id == ((*iter)->getid()))
+		{
+			ck = true;
+		}
+		iter++;
+	}
+	return id;
+	
+}
+
+void ProductList::Productfind()
+{
+	int p, o;
+	cout << "Введите ID товара: ";
+	cin >> o;
+	p = getidd(o);
+	if (ck == true)
+	{
+		iter = setPtrsProduct.begin();
+		while (iter != setPtrsProduct.end())
+		{
+			if (p == ((*iter)->getid()))
+			{
+				cout << "ID: " << (*iter)->getid() << "\n" << "Наименование: " << (*iter)->getname() << "\n"
+					<< "Розничная цена: " << (*iter)->getprice() << "\n" << "Закупочная цена: " << (*iter)->getOptPrice() << "\n"
+					<< "Количество: " << (*iter)->getcount() << endl;
+			}
+			*iter++;
+		}	
+	}
+	else
+		cout << "Такого товара нет.\n" << endl;
+	
+}
+void ProductList::display()
+{
+	cout << "\nID\t Название\t Цена\t Количество\n-------------------------------------------\n";
+	if (setPtrsProduct.empty())
+		cout << "***Нет товаров***\n" << endl;
+	else
+	{
+		iter = setPtrsProduct.begin();
+		while (iter != setPtrsProduct.end())
+		{
+			cout << (*iter)->getid() << "\t" << (*iter)->getname() << "\t" << (*iter)->getprice() << "\t" << (*iter)->getcount() << endl;
+			*iter++;
+		}
+	}
+}
+
 
 void ProductAddScreen::setProduct()
 {	
+	tid = ptrProductList->getiid();
 	cout << "Введите название товара:" << endl;
 	getaLine(tname);
 	cout << "Введите описание товара:" << endl;
@@ -56,8 +128,8 @@ void ProductAddScreen::setProduct()
 	cin >> tOptPrice;
 	cout << "Введите количество товара: " << endl;
 	cin >> tcount;
-	cin.ignore(80, '\n');
-	Product* ptrProduct = new Product(tname, tdescription, tprice, tcount,tOptPrice);
+	cin.ignore(255, '\n');
+	Product* ptrProduct = new Product(tname,  tdescription, tprice, tid, tcount, tOptPrice);
 	ptrProductList->insertProduct(ptrProduct);
 
 }
@@ -77,18 +149,6 @@ void ProductList::insertProduct(Product* ptrP)
 	setPtrsProduct.push_back(ptrP); 
 }
 
-void ProductList::display() 
-{
-	cout << "\nНазвание\t Цена\t\t Количество\n-------------------------------------\n";
-	if (setPtrsProduct.empty()) 
-		cout << "***Нет товаров***\n" << endl; 
-	else
-	{
-		iter = setPtrsProduct.begin();
-		while (iter != setPtrsProduct.end()) 
-		{
-			cout << " ||\t " << (*iter)->getname() << " ||\t " << (*iter)->getprice() <<  " ||\t "<< (*iter)->getcount() << " || " << endl;
-			*iter++;
-		}
-	}
-}
+
+
+

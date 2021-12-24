@@ -3,6 +3,7 @@
 #include <list>
 #include <numeric>
 #include <string>
+
 using namespace std;
 void getaLine(string& inStr); 
 char getaChar();
@@ -29,7 +30,7 @@ public:
 
 class ProductList {
 private:
-	
+	//ProductList* ptrProductList;
 	list <Product*> setPtrsProduct; 
 	list <Product*>::iterator iter;
 	int id;
@@ -40,19 +41,10 @@ public:
 	void insertProduct(Product*);
 	void display();
 	int getiid();
-	int getidd(int);
-	void Productfind();
-};
-
-/*class ProductLis {
-private:
+    int getidd(int);
+    void Productfind();
 	
-	ProductList* ptrProductList;
-public:
-	string renterName; 
-
-};*/
-
+};
 
 
 class ProductAddScreen {
@@ -75,3 +67,61 @@ public:
 
 	void setProduct();
 };
+
+
+class waybillElement {
+private:
+	int idProduct;
+	int countProduct;
+public:
+	~waybillElement();
+	waybillElement(int i, int c);
+	int getidProduct();
+	int getcountProduct();
+
+};
+
+class ProductList;
+class Product;
+
+class waybillList :public ProductList {
+private:
+	list <waybillElement*> setPtrswaybillElement;
+	list <waybillElement*>::iterator iterr;
+	waybillList* ptrwaybillList;
+	list <Product*> setPtrsProduct;
+	list <Product*>::iterator iter;
+	
+	int date;
+	int month;
+	float summ ;
+	int ID;
+	friend  int ProductList::getidd(int);
+	
+public:
+	
+	~waybillList();
+	void insertwaybillList(waybillElement*);
+	void display();
+	void sum();
+	friend ProductList;
+	int check(int);
+	int getod(int);
+};
+
+class waybillAddScreen {
+private:
+	waybillList* ptrwaybillList;
+	int tidProduct;
+	int tcountProduct;
+	float tprice;
+public:
+
+	waybillAddScreen(waybillList* ptrwE) : ptrwaybillList(ptrwE)
+	{
+
+	}
+
+	void setwaybillElement();
+};
+

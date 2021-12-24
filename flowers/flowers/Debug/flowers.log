@@ -1,2 +1,6 @@
-﻿  UserInterface.cpp
+﻿  Product.cpp
+C:\teamproject\flowers\flowers\Product.cpp(98,4): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\teamproject\flowers\flowers\Product.cpp(116,4): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\teamproject\flowers\flowers\Product.cpp(231,6): warning C4101: p: неиспользованная локальная переменная
+C:\teamproject\flowers\flowers\Product.cpp(248,4): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
   flowers.vcxproj -> C:\teamproject\flowers\Debug\flowers.exe

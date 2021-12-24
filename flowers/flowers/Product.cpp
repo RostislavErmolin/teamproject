@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Product.h"
+
+
 void getaLine(string& inStr) 
 {
 	char temp[21];
@@ -32,7 +34,7 @@ string Product::getdescription()
 {
 	return description;
 }
-float Product::getprice()
+ float Product::getprice()
 {
 	return price;
 }
@@ -57,6 +59,7 @@ int ProductList::getiid()
 		iid = setPtrsProduct.size() ;
 	return iid;
 }
+
 int ProductList::getidd(int id) 
 {
 	ck = false;
@@ -80,6 +83,7 @@ void ProductList::Productfind()
 	cout << "Введите ID товара: ";
 	cin >> o;
 	p = getidd(o);
+	auto result = setPtrsProduct.begin();
 	if (ck == true)
 	{
 		iter = setPtrsProduct.begin();
@@ -151,4 +155,98 @@ void ProductList::insertProduct(Product* ptrP)
 
 
 
+waybillElement::~waybillElement()
+{
+
+}
+waybillElement::waybillElement(int i, int c) : idProduct(i), countProduct(c)
+{
+
+}
+
+int waybillElement::getidProduct() {
+	return idProduct;
+}
+
+int waybillElement::getcountProduct() {
+	return countProduct;
+}
+
+
+waybillList ::~waybillList()
+{
+	while (!setPtrswaybillElement.empty())
+	{
+		iterr = setPtrswaybillElement.begin();
+		delete* iterr;
+		setPtrswaybillElement.erase(iterr);
+	}
+}
+
+void waybillAddScreen::setwaybillElement()
+{
+	cout << "Введите ID товара:" << endl;
+	cin >> tidProduct;
+	cout << "Введите количество товара: " << endl;
+	cin >> tcountProduct;
+	cin.ignore(80, '\n');
+	waybillElement* ptrwaybillElement = new  waybillElement(tidProduct, tcountProduct);
+	ptrwaybillList->insertwaybillList(ptrwaybillElement);
+
+}
+void waybillList::insertwaybillList(waybillElement* ptrw)
+{
+	setPtrswaybillElement.push_back(ptrw);
+}
+
+
+void waybillList::sum() {
+	int t;
+	string p;
+	iterr = setPtrswaybillElement.begin();
+	while (iterr != setPtrswaybillElement.end())
+	{			
+		ID = (*iterr)->getidProduct();
+		t = ptrwaybillList->check(ID);
+		//cout << "!!!" << ID<< "@@";
+		iterr++;
+	}
+	
+}
+int waybillList::getod(int ID)
+{
+	iter = setPtrsProduct.begin();
+	while (iter != setPtrsProduct.end())
+	{
+		if (ID == ((*iter)->getid()))
+		{
+			//cout << "qqqqq";
+		}
+		iter++;
+	}
+	return ID;
+
+}
+int waybillList::check(int ID) {
+	int p;
+	
+	cout  << "$$$";
+	return ID;
+}
+
+void waybillList::display()
+{
+	cout << "\nID\t  Количество\n-------------------------------------------\n";
+	if (setPtrswaybillElement.empty())
+		cout << "***Нет товаров***\n" << endl;
+	else
+	{
+		iterr = setPtrswaybillElement.begin();
+		while (iterr != setPtrswaybillElement.end())
+		{
+			cout << (*iterr)->getidProduct() << "\t" << (*iterr)->getcountProduct() << endl;
+			*iterr++;
+		}
+	}
+}
 

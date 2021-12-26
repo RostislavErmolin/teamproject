@@ -62,8 +62,7 @@ int ProductList::getiid()
 
 int ProductList::getidd(int id) 
 {
-	ck = false;
-	string nam;
+    ck = false;
 	iter = setPtrsProduct.begin();
 	while (iter != setPtrsProduct.end())
 	{ 
@@ -83,7 +82,6 @@ void ProductList::Productfind()
 	cout << "Введите ID товара: ";
 	cin >> o;
 	p = getidd(o);
-	auto result = setPtrsProduct.begin();
 	if (ck == true)
 	{
 		iter = setPtrsProduct.begin();
@@ -91,8 +89,8 @@ void ProductList::Productfind()
 		{
 			if (p == ((*iter)->getid()))
 			{
-				cout << "ID: " << (*iter)->getid() << "\n" << "Наименование: " << (*iter)->getname() << "\n"
-					<< "Розничная цена: " << (*iter)->getprice() << "\n" << "Закупочная цена: " << (*iter)->getOptPrice() << "\n"
+				cout << left  << "ID: " << (*iter)->getid() << "\n" << "Наименование: " << (*iter)->getname() << "\n"
+					<<"Описание: " << (*iter)->getdescription() << "\n" << "Розничная цена: " << (*iter)->getprice() << "\n" << "Закупочная цена: " << (*iter)->getOptPrice() << "\n"
 					<< "Количество: " << (*iter)->getcount() << endl;
 			}
 			*iter++;
@@ -121,18 +119,20 @@ void ProductList::display()
 
 void ProductAddScreen::setProduct()
 {	
+	bool ck = false;
+	//float tp;
 	tid = ptrProductList->getiid();
 	cout << "Введите название товара:" << endl;
-	getaLine(tname);
+	cin>>(tname);
 	cout << "Введите описание товара:" << endl;
-	getaLine( tdescription);
+	cin>>( tdescription);
 	cout << "Введите цену товара:" << endl;
-	cin >> tprice;
+	cin >> tprice ;
 	cout << "Введите закупочную цену товара:" << endl;
 	cin >> tOptPrice;
 	cout << "Введите количество товара: " << endl;
 	cin >> tcount;
-	cin.ignore(255, '\n');
+	//cin.ignore(255, '\n');
 	Product* ptrProduct = new Product(tname,  tdescription, tprice, tid, tcount, tOptPrice);
 	ptrProductList->insertProduct(ptrProduct);
 
@@ -187,66 +187,46 @@ void waybillAddScreen::setwaybillElement()
 {
 	cout << "Введите ID товара:" << endl;
 	cin >> tidProduct;
+	cin.ignore(80, '\n');
 	cout << "Введите количество товара: " << endl;
 	cin >> tcountProduct;
 	cin.ignore(80, '\n');
-	waybillElement* ptrwaybillElement = new  waybillElement(tidProduct, tcountProduct);
+	waybillElement* ptrwaybillElement = new waybillElement(tidProduct, tcountProduct);
 	ptrwaybillList->insertwaybillList(ptrwaybillElement);
 
 }
-void waybillList::insertwaybillList(waybillElement* ptrw)
+void waybillList::insertwaybillList(waybillElement* ptrwE)
 {
-	setPtrswaybillElement.push_back(ptrw);
+	setPtrswaybillElement.push_back(ptrwE);
 }
 
-
-void waybillList::sum() {
-	int t;
-	string p;
-	iterr = setPtrswaybillElement.begin();
-	while (iterr != setPtrswaybillElement.end())
-	{			
-		ID = (*iterr)->getidProduct();
-		t = ptrwaybillList->check(ID);
-		//cout << "!!!" << ID<< "@@";
-		iterr++;
-	}
-	
-}
-int waybillList::getod(int ID)
-{
-	iter = setPtrsProduct.begin();
-	while (iter != setPtrsProduct.end())
-	{
-		if (ID == ((*iter)->getid()))
-		{
-			//cout << "qqqqq";
-		}
-		iter++;
-	}
-	return ID;
-
-}
-int waybillList::check(int ID) {
-	int p;
-	
-	cout  << "$$$";
-	return ID;
-}
 
 void waybillList::display()
 {
-	cout << "\nID\t  Количество\n-------------------------------------------\n";
-	if (setPtrswaybillElement.empty())
-		cout << "***Нет товаров***\n" << endl;
-	else
-	{
-		iterr = setPtrswaybillElement.begin();
-		while (iterr != setPtrswaybillElement.end())
+	if (setPtrswaybillElement.size() > 0) {
+
+		cout << "\nID\t  Количество\n-------------------------------------------\n";
+		if (setPtrswaybillElement.empty())
+			cout << "***Нет записей***\n" << endl;
+		else
 		{
-			cout << (*iterr)->getidProduct() << "\t" << (*iterr)->getcountProduct() << endl;
-			*iterr++;
+			iterr = setPtrswaybillElement.begin();
+			while (iterr != setPtrswaybillElement.end())
+			{
+				cout << left << (*iterr)->getidProduct() << "\t" << (*iterr)->getcountProduct() << endl;
+				*iterr++;
+			}
+			cout << "-------------------------------------------" << endl;
 		}
 	}
 }
+void Product::setcount(int new_count)
+{
+	count = new_count;
+}
 
+/*void ProductList::ncount() {
+	int new_count;
+	iter = setPtrsProduct.begin();
+	prtProduct->setcount(new_count);
+}*/

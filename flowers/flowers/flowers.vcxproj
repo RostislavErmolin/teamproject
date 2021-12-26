@@ -140,16 +140,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="ClientInputScreen.cpp" />
     <ClCompile Include="ClientList.cpp" />
+=======
+>>>>>>> myfeature
     <ClCompile Include="flowers.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="UserInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h" />
+<<<<<<< HEAD
     <ClInclude Include="ClientInputScreen.h" />
     <ClInclude Include="ClientList.h" />
+=======
+>>>>>>> myfeature
     <ClInclude Include="Product.h" />
     <ClInclude Include="UserInterface.h" />
   </ItemGroup>

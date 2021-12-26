@@ -24,12 +24,15 @@
     <ClCompile Include="UserInterface.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="ClientList.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="ClientInputScreen.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+=======
+>>>>>>> myfeature
     <ClCompile Include="Client.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -44,11 +47,14 @@
     <ClInclude Include="Client.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="ClientInputScreen.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="ClientList.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+=======
+>>>>>>> myfeature
   </ItemGroup>
 </Project>

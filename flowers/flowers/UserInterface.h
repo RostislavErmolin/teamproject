@@ -5,10 +5,11 @@
 #include <string>
 #include <conio.h>
 #include "Product.h"
-//#include "ExpensesTable.h"
-//#include "Pay.h"
+#include "Client.h"
 
 
+#ifndef Userinterface_H
+#define Userinterface_H
 using namespace std; class UserInterface
 {
 private:
@@ -16,12 +17,12 @@ private:
 	ProductAddScreen* ptrProductAddScreen;
 	waybillList* ptrwaybillList;
 	waybillAddScreen* ptrwaybillAddScreen;
-
-	//ExpenseRecord* ptrExpenseRecord;
-	//ExpenseInputScreen* ptrExpenseInputScreen;
-	//AnnualReport* ptrAnnualReport;
+	ClientInputScreen* ptrClientInputScreen;
+	ClientList* ptrClientList;
+	
 public:
 UserInterface();
 	~UserInterface();
 	void interact();
 };
+#endif

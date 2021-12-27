@@ -26,6 +26,10 @@ public:
 	int getcount();
 	int getid();
 	float getOptPrice();
+	void setname(string new_name);
+	void setdescription(string description);
+	void setprice(float new_price);
+	void setOptPrice(float new_OptPrice);
 	void setcount(int new_count);
 };
 

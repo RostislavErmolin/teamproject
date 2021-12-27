@@ -55,6 +55,10 @@ void UserInterface::interact()
 				ptrProductList->~ProductList();
 			if (q == 'y' || q == 'Y') {
 				ptrProductList->Productfind();
+				cout << "\nr-Редактировать товар" << endl;
+				q = _getch();
+				if(q == 'r')
+				ptrProductList->edit();
 			}
 			else
 				cout << "Нажми любую клавишу для выхода в меню" << endl;

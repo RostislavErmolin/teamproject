@@ -34,6 +34,7 @@ void ProductList::Productfind()
 	cout << "Введите ID товара: ";
 	cin >> o;
 	p = getidd(o);
+	id = o;
 	if (ck == true)
 	{
 		iter = setPtrsProduct.begin();
@@ -87,3 +88,85 @@ void ProductList::insertProduct(Product* ptrP)
 }
 
 
+void ProductList::edit() {
+	string n_name, n_desc;
+	float n_price, n_Optprice;
+	int n_count;
+	cout << "Выберете данные для изменения:" << endl;
+	cout << "1-Название: " << endl;
+	cout << "2-Описание\n";
+	cout << "3-Цену\n";
+	cout << "4-Закупочную цену\n";
+	cout << "5-Количество\n";
+	cout << "6-Сохранить\n";
+	int cim ;
+	bool w = true, n = false, d = false, p = false, o = false, c = false;
+	while (w == true) {
+		cout << "Выберете номер пунката\n";
+		cin >> cim;
+		switch (cim)
+		{
+		case 1: {
+			cout << "Введите новое имя: " << endl;
+			cin >> n_name;
+			n = true;
+			break;
+		}
+		case 2: {
+			cout << "Введите новое описание: " << endl;
+			cin >> n_desc;
+			d = true;
+			break;
+		}
+		case 3: {
+			cout << "Введите новую цену: " << endl;
+			cin >> n_price;
+			p = true;
+			break;
+		}
+		case 4: {
+			cout << "Введите новую закупочную цену: " << endl;
+			cin >> n_Optprice;
+			o = true;
+			break;
+		}
+		case 5: {
+			cout << "Введите новое количество товара: " << endl;
+			cin >> n_count;
+			c = true;
+			break;
+		}
+		case 6: {
+		 iter = setPtrsProduct.begin();
+	      while (iter != setPtrsProduct.end())
+	      {
+		    if (id == ((*iter)->getid()))
+		     {
+				if (n == true)
+				(*iter)->setname(n_name);
+				if (p == true)
+				(*iter)->setprice(n_price);
+				if (c == true)
+				(*iter)->setcount(n_count);
+				if (d == true)
+				(*iter)->setdescription(n_desc);
+				if (o == true)
+				(*iter)->setOptPrice(n_Optprice);
+		     }
+		     *iter++;
+	      }
+		  cout << "Запись успешно отредактирована" << endl;
+		  w = false;
+			break;
+		}
+		
+
+		default: {
+			cout << "Нет такого пункта" << endl;
+			system("pause");
+			break;
+		}
+		}
+	}
+	
+}

@@ -139,10 +139,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="ClientInputScreen.cpp" />
+    <ClCompile Include="ClientList.cpp" />
+    <ClCompile Include="ExpenseInputScreen.cpp" />
+    <ClCompile Include="ExpenseRecord.cpp" />
+    <ClCompile Include="ExpensesTable.cpp" />
     <ClCompile Include="flowers.cpp" />
+    <ClCompile Include="Product.cpp" />
+    <ClCompile Include="ProductAddScreen.cpp" />
+    <ClCompile Include="ProductList.cpp" />
+    <ClCompile Include="waybillElement.cpp" />
+    <ClCompile Include="waybillList .cpp" />
+    <ClCompile Include="waybillAddScreen.cpp" />
+    <ClCompile Include="UserInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="ClientInputScreen.h" />
+    <ClInclude Include="ClientList.h" />
+    <ClInclude Include="ExpenseInputScreen.h" />
+    <ClInclude Include="ExpenseRecord.h" />
+    <ClInclude Include="ExpensesTable.h" />
+    <ClInclude Include="ProductList.h" />
+    <ClInclude Include="ProductAddScreen.h" />
+    <ClInclude Include="waybillElement.h" />
+    <ClInclude Include="waybillList .h" />
+    <ClInclude Include="waybillAddScreen.h" />
     <ClInclude Include="Product.h" />
+    <ClInclude Include="UserInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -52,10 +52,23 @@ int Product::getid()
 }
 
 
-
-
-
-void Product::setcount(int new_count)
+void Product::setname(string n_name)
 {
-	count = new_count;
+	name = n_name;
+}
+void Product::setdescription(string n_desc)
+{
+	description = n_desc;
+}
+void Product::setprice(float n_price)
+{
+	price = n_price;
+}
+void Product::setOptPrice(float n_OptPrice)
+{
+	OptPrice = n_OptPrice;
+}
+void Product::setcount(int n_count)
+{
+	count = n_count;
 }

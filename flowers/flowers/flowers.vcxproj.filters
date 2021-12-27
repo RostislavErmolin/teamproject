@@ -12,6 +12,9 @@
     <ClCompile Include="waybillElement.cpp" />
     <ClCompile Include="ProductAddScreen.cpp" />
     <ClCompile Include="ProductList.cpp" />
+    <ClCompile Include="ExpensesTable.cpp" />
+    <ClCompile Include="ExpenseInputScreen.cpp" />
+    <ClCompile Include="ExpenseRecord.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h" />
@@ -24,5 +27,8 @@
     <ClInclude Include="waybillElement.h" />
     <ClInclude Include="ProductAddScreen.h" />
     <ClInclude Include="ProductList.h" />
+    <ClInclude Include="ExpensesTable.h" />
+    <ClInclude Include="ExpenseInputScreen.h" />
+    <ClInclude Include="ExpenseRecord.h" />
   </ItemGroup>
 </Project>

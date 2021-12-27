@@ -13,7 +13,9 @@
 #include"waybillAddScreen.h"
 #include "waybillList .h"
 #include"waybillElement.h"
-
+#include "ExpensesTable.h"
+#include "ExpenseinputScreen.h"
+#include "ExpenseRecord.h"
 #ifndef Userinterface_H
 #define Userinterface_H
 using namespace std; 
@@ -21,12 +23,20 @@ using namespace std;
 class UserInterface
 {
 private:
+	
 	ProductList* ptrProductList;
 	ProductAddScreen* ptrProductAddScreen;
 	waybillList* ptrwaybillList;
 	waybillAddScreen* ptrwaybillAddScreen;
+
 	ClientInputScreen* ptrClientInputScreen;
 	ClientList* ptrClientList;
+
+	ExpenseInputScreen* ptrExpInputScreen;
+	IncomeRecord* ptrIncomeRecord;
+	ExpenseRecord* ptrExpenseRecord;
+	AnnualReport* ptrAnnualReport;
+
 	
 public:
 UserInterface();

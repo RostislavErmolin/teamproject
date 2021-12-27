@@ -142,6 +142,9 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="ClientInputScreen.cpp" />
     <ClCompile Include="ClientList.cpp" />
+    <ClCompile Include="ExpenseInputScreen.cpp" />
+    <ClCompile Include="ExpenseRecord.cpp" />
+    <ClCompile Include="ExpensesTable.cpp" />
     <ClCompile Include="flowers.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="ProductAddScreen.cpp" />
@@ -155,6 +158,9 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientInputScreen.h" />
     <ClInclude Include="ClientList.h" />
+    <ClInclude Include="ExpenseInputScreen.h" />
+    <ClInclude Include="ExpenseRecord.h" />
+    <ClInclude Include="ExpensesTable.h" />
     <ClInclude Include="ProductList.h" />
     <ClInclude Include="ProductAddScreen.h" />
     <ClInclude Include="waybillElement.h" />

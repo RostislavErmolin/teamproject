@@ -10,6 +10,7 @@ using namespace std;
 class Product;
 class ProductList {
 private:
+	ProductList* ptrProductList;
 	Product* prtProduct;
 	int id;
 	string nam;
@@ -23,5 +24,6 @@ public:
 	int getiid();
 	int getidd(int);
 	void Productfind();
+	void edit();
 };
 #endif

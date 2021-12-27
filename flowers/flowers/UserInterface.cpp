@@ -10,6 +10,9 @@ UserInterface::UserInterface()
 	ptrProductList = new ProductList;
 	ptrwaybillList = new waybillList;
 	ptrClientList = new ClientList;
+	ptrExpenseRecord = new ExpenseRecord;
+	//ptrIncomeRecord = new IncomeRecord;
+	ptrAnnualReport = new AnnualReport(ptrExpenseRecord);//,ptrIncomeRecord);
 
 }
 
@@ -18,11 +21,15 @@ UserInterface::~UserInterface()
 	delete ptrProductList;
 	delete ptrwaybillList;
 	delete ptrClientList;
+	delete ptrExpenseRecord;
+	//delete ptrIncomeRecord;
+	delete ptrAnnualReport;
 }
 
 void UserInterface::interact()
 {
 	char q;
+	float summ = 0;
 	bool c = true;
 	while (c == true) {
 		system("cls");
@@ -31,7 +38,7 @@ void UserInterface::interact()
 		cout << "2-Список товаров" << endl;
 		cout << "3-Добавить товар в накладную" << endl;
 		cout << "4-Посмотреть накладную:" << endl;
-		//cout << "5-отчет" << endl;
+		cout << "5-отчет" << endl;
 		cout << "esc-Для выхода из программы" << endl;
 		switch (_getch())
 
@@ -74,7 +81,7 @@ void UserInterface::interact()
 			cout << "Посмотреть накладную" << endl;
 			ptrwaybillList->display();
 			int  ID, count;
-			float summ = 0;
+			
 			ptrwaybillList->iterr = ptrwaybillList->setPtrswaybillElement.begin();
 			while (ptrwaybillList->iterr != ptrwaybillList->setPtrswaybillElement.end())
 			{
@@ -144,8 +151,13 @@ void UserInterface::interact()
 		
 		case '5': {
 			system("cls");
-			
+			ptrExpInputScreen = new ExpenseInputScreen(ptrExpenseRecord);
+			ptrExpInputScreen->setExpense();
+			ptrAnnualReport->display();
+			cout << "Доходы за всё время:\t\t";
+			cout << summ << endl;
 			system("pause");
+			delete ptrExpInputScreen;
 			break;
 		}
 		case esc: {

@@ -24,5 +24,6 @@
     <ClInclude Include="waybillElement.h" />
     <ClInclude Include="ProductAddScreen.h" />
     <ClInclude Include="ProductList.h" />
+    <ClInclude Include="ExpensesTable.h" />
   </ItemGroup>
 </Project>

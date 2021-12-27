@@ -155,6 +155,7 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientInputScreen.h" />
     <ClInclude Include="ClientList.h" />
+    <ClInclude Include="ExpensesTable.h" />
     <ClInclude Include="ProductList.h" />
     <ClInclude Include="ProductAddScreen.h" />
     <ClInclude Include="waybillElement.h" />

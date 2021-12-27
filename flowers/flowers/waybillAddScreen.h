@@ -2,7 +2,7 @@
 #include <vector>
 #include <list>
 #include <string>
-#include <numeric> //для accumulate()
+#include <numeric> 
 
 #ifndef waybillAddScreen_H
 #define waybillAddScreen_H

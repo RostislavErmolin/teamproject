@@ -2,7 +2,7 @@
 #include <vector>
 #include <list>
 #include <string>
-#include <numeric> //для accumulate()
+#include <numeric> 
 
 #ifndef ProductAddScreen_H
 #define ProductAddScreen_H

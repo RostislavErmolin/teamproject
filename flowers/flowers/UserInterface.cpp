@@ -53,6 +53,7 @@ void UserInterface::interact()
 			q = _getch();
 			if (q == '1')
 				ptrProductList->~ProductList();
+			
 			if (q == 'y' || q == 'Y') {
 				ptrProductList->Productfind();
 				cout << "\nr-Редактировать товар" << endl;

@@ -1,14 +1,14 @@
-#include "Client.h"
 #include "tchar.h"
 #include <iostream>
 #include "ClientList.h"
+//#include"Client.h"
 
 void ClientList::Clientfind()
 {
 	string getSername;
 	cout << "Введите имя: ";
 	cin >> getSername;
-	ck = false;
+	bool ck = false;
 	{
 		iter = setPtrsClnt.begin();
 		while (iter != setPtrsClnt.end())
@@ -32,7 +32,7 @@ void ClientList::Clientfind()
 
 void ClientList::display() // вывод списка клиентов
 {
-	cout << "\nSurname\t\tItem\t\tQty\n";
+	cout << "\nSurname\n";
 	if (setPtrsClnt.empty()) // если список клиентов пуст
 		cout << "***No clients***\n" << endl; // выводим запись, что он пуст)
 	else

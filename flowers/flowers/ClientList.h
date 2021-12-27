@@ -3,16 +3,17 @@
 #include <list>
 #include <string>
 #include <numeric> //для accumulate()
-#include "Client.h"
-#pragma once
+#include"Client.h"
 
-#ifndef CLIENTLIST_H
-#define CLIENTLIST_H
+#ifndef ClientList_H
+#define ClientList_H
+using namespace std;
+class Client;
 class ClientList
 {
 private:
 	// установить указатели на клиентов
-
+	Client* ptrClient;
 	bool ck;
 
 public:

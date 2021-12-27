@@ -159,7 +159,3 @@ void UserInterface::interact()
 	}
 }
 
-void savefile() {
-		
-
-}

@@ -3,11 +3,12 @@
 #include <list>
 #include <string>
 #include <numeric> //для accumulate()
-#include "Client.h"
-#pragma once
+#include"ClientList.h"
+//#include"Client.h"
 
-#ifndef CLIENTINPUTSCREEN_H
-#define CLIENTINPUTSCREEN_H
+#ifndef ClientinputScreen_H
+#define ClientinputScreen_H
+using namespace std;
 class ClientInputScreen
 {
 private:

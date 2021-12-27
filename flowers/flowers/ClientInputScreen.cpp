@@ -1,8 +1,6 @@
-#include "Client.h"
 #include "tchar.h"
 #include <iostream>
-#include"ClientInputSCreen.h"
-#include "ClientList.h"
+#include"ClientInputScreen.h"
 
 void ClientInputScreen::setClient() // добавить данные о клиенте
 {
